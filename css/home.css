@@ -1,140 +1,237 @@
 * {
     margin: 0;
     padding: 0;
-
 }
-
+         /*Imagem Fundo*/
 body {
-    background-image: url(/img/fundo2.jpg) ;
-   
+  background-image: url(/img/cafeteria.jpg) ;
+    background-size: 100%;
+    width: 100%;
+    background-attachment: fixed;
 
 }
-
+/*Tamanho main*/
 main {
-
-    width: 960px;
+    width: 75%;
+   max-width: 960px;
     margin: 0 auto;
-
-
 }
-
+/*Configuração topo da pagina */
 header {
-
-    position: fixed;
-    text-align: top;
+    display: flex ;
+    justify-content: space-between;
     width: 100%;
     height: 80px;
     background: black;
-    
-
 }
-
-
-li {
-
-    padding: 15px;
-    text-align: right;
-
-}
-
-a {
-    text-decoration: none;
-    color: #b7860f;
-}
-
-.item {
+.logo{
+    flex-direction: row;
+ }
+ iframe{
+    margin-left: 20px;
+    width: 95%;
+ }
+ 
+ .logo img {
+     width: 80px;
+     flex-direction: row ;
+ }
+ .item {
 
     font-weight: bold;
     font-size: 20px;
     text-decoration: none;
     display: inline-block;
+    
 }
-
+li {
+    padding: 15px;
+    text-align: right;
+    transition:all .25s;
+    
+}
+nav a:hover{
+  text-decoration:underline;
+  transition:all .25s;
+  color: #b7860f;
+}
+a {
+  
+   text-decoration: none;
+    color: #b7860f;
+}
+/*Conteudos corpo da pagina*/
 section {
-    background-color: rgba(255, 255, 255, 0.363);
-
+    background-color: rgba(59, 56, 56, 0.808);
+    margin-top: 200px;
+    margin-bottom: 150px;
 }
-p{
+h1{
+
+    text-align: center;
+    font-weight: bold;
+    color:#f5f2ed;
+}
+
+/*Texto sobre a empresa*/
+.sobre{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 30em;
+    width: 90%;
     font-size: 180%;    
-    color: black;
+    color: #f5f2ed;
 }
 
 
-
-.area-logo {
-    margin-left: 5%;
-    float: left;
+.produtos{
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.area-logo img {
-    width: 80px;
-
+.cardap{
+   
+    color: white;
 }
 
-.menu {
-    float: right;
-    margin-right: 5%;
-    margin-top: 1%;
-    text-decoration: none;
-
-}
-
-.prod {
-    height: 200px;
-    background-position: 70px;
-    background-size: 70%;
-
-
-}
-
-.titulo {
+.imagem{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: 20px;
     text-align: center;
-    padding: 20px;
-    margin-bottom: 10px;
 }
 
-.cafe img {
+.imagem img{
+    width: 100%;
+  
+}
+.text {
+    color:black;
+    font-size: 22px;
+  }
 
-    padding: 20px;
-    width: 350px;
-    position: absolute;
-    right: 57%;
-    top: 50%;
-    margin-left: -110px;
-    margin-top: -40px;
-    transition: all 0.5s;
+.imagem button{
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
     cursor: pointer;
-
-
+    width: 100%;
+    font-size: 18px;
 }
-
-.pizza img {
-
-    position: absolute;
-    left: 75%;
-    top: 50%;
-    margin-left: -110px;
-    margin-top: -40px;
-    padding: 20px;
-    width: 400px;
-    transition: all 0.5s;
-    cursor: pointer;
-
+.imagem button:hover{
+    opacity: 0.7;
 }
+/*Conteudo do Rodape da Pagina*/
+.rodape{
+    background-color:black;
+    box-shadow: 0 1px 1px 0 black;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px ;
+    padding: 45px 50px;
+  }
+  
+ .rodape .esquerda p {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+  }
 
-.sorvete img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -110px;
-    margin-top: -40px;
-    padding: 20px;
-    width: 350px;
-    transition: all 0.5s;
-    cursor: pointer;
+ .rodape p.links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+    transition: ease .25s;
+  }
+  
+  .rodape .links a:before {
+    content: "·";
+    font-size: 20px;
+    left: 0;
+    color: #b7860f;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .rodape .links .link-1:before {
+    content: none;
+  }
+  
+  .rodape .direita {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
 
+ .rodape .direita a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+    transition:all .25s;
+  }
+  
+  .rodape .direita a:hover{
+    transform:scale(1.1); -webkit-transform:scale(1.1);
 }
+  
+  .rodape p.links a:hover{
+    text-decoration:underline;
+}
+/* Flutua as tabelas lado a lado */
+.tabela {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 18px;
+  }
+  /* Remove margens extras*/
+  .cardapio {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 150px;
+}
+  
+  /* Limpa flutuações apos colunas*/
+  .cardapio:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Estiliza os cards */
+  .car1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+    padding: 35px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #b1aeae;
+  }
+  @media screen and (max-width: 600px) {
+   
+    .tabela {
+     
+      width: 100%;
+      display: block  ;
+      margin-bottom: 20px;
+    }
+  }
+ 
+  
+  
+
+
+
+  
