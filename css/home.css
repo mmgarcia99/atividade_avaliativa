@@ -5,7 +5,7 @@
          /*Imagem Fundo*/
 body {
   background-image: url(/img/cafeteria.jpg) ;
-    background-size: 100%;
+    background-size: cover;
     width: 100%;
     background-attachment: fixed;
 
@@ -24,13 +24,13 @@ header {
     height: 80px;
     background: black;
 }
+.icon{
+  display: none;
+}
 .logo{
     flex-direction: row;
  }
- iframe{
-    margin-left: 20px;
-    width: 95%;
- }
+ 
  
  .logo img {
      width: 80px;
@@ -47,8 +47,7 @@ header {
 li {
     padding: 15px;
     text-align: right;
-    transition:all .25s;
-    
+    transition:all .25s;   
 }
 nav a:hover{
   text-decoration:underline;
@@ -67,10 +66,93 @@ section {
     margin-bottom: 150px;
 }
 h1{
-
     text-align: center;
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color:#f5f2ed;
+}
+tr, h3{
+  margin-bottom: 25px;
+}
+/*CONTEUDO PAGINA HOME*/
+.produtos{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.imagem{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
+  margin: 20px;
+  text-align: center;
+}
+
+.imagem img{
+  width: 100%;
+
+}
+.text {
+  color:black;
+  font-size: 22px;
+}
+
+.imagem button{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.imagem button:hover{
+  opacity: 0.7;
+}
+
+/*PAGINA CARDAPIO*/
+.cardap{
+  color: white;
+}
+
+/* Flutua as tabelas lado a lado */
+.tabela {
+  display: flex;
+  flex-wrap: wrap;
+  width: 180px;
+  padding: 0 18px;
+  margin-bottom: 20px;
+}
+/* Remove margens extras*/
+.cardapio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+/* Limpa flutuações apos colunas*/
+.cardapio:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Estiliza os cards */
+.car1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 35px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #b1aeae;
+}
+
+
+/* MAPA PARA LOCALIZAÇÃO*/
+iframe{
+  margin-left: 20px;
+  width: 95%;
 }
 
 /*Texto sobre a empresa*/
@@ -83,47 +165,51 @@ h1{
     color: #f5f2ed;
 }
 
-
-.produtos{
-    display: flex;
-    flex-wrap: nowrap;
+/* FORMULARIO PARA ENVIAR SUJESTÕES PARA EMPRESA*/
+.form{
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(243, 242, 242, 0.986);
+  padding: 40px;
+  transition: all 0.3s ease-out;
+}
+#observa{
+  width: 100%;
+}
+label, legend{
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+#nome,#email, #telefone{
+  margin-top: 17px;
+  margin-bottom: 18px;
+  margin-left: 11px;
+  width: 100%;
+  height: 25px;
+}
+.acao{
+  width: 100%;
+  text-align: center;
+  margin-left: 45px;
+}
+#baixo{
+  background-color: #000;
+  color: #b7860f;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-radius: 15px;
+  font-size: 16pt;
+  width: 20%;
+}
+#baixo:hover{
+  border-radius: 15px;
+  background-color: white;
+  font: bold;
+  pointer-events: auto;
 }
 
-.cardap{
-   
-    color: white;
-}
-
-.imagem{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 500px;
-    margin: 20px;
-    text-align: center;
-}
-
-.imagem img{
-    width: 100%;
-  
-}
-.text {
-    color:black;
-    font-size: 22px;
-  }
-
-.imagem button{
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.imagem button:hover{
-    opacity: 0.7;
-}
 /*Conteudo do Rodape da Pagina*/
 .rodape{
     background-color:black;
@@ -139,8 +225,9 @@ h1{
     color: #8f9296;
     font-size: 14px;
     margin: 0;
+    
   }
-
+ 
  .rodape p.links {
     font-size: 18px;
     font-weight: bold;
@@ -151,7 +238,7 @@ h1{
   }
   
   .rodape .links a:before {
-    content: "·";
+   
     font-size: 20px;
     left: 0;
     color: #b7860f;
@@ -180,6 +267,7 @@ h1{
     text-align: center;
     line-height: 35px;
     margin-left: 3px;
+    
     transition:all .25s;
   }
   
@@ -190,48 +278,130 @@ h1{
   .rodape p.links a:hover{
     text-decoration:underline;
 }
-/* Flutua as tabelas lado a lado */
-.tabela {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    padding: 0 18px;
-  }
-  /* Remove margens extras*/
-  .cardapio {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 0 150px;
-}
-  
-  /* Limpa flutuações apos colunas*/
-  .cardapio:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  /* Estiliza os cards */
-  .car1 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+   /* MEDIA 550PX*/
+  @media screen and (max-width: 550px) {
     
-    padding: 35px;
-    font-size: 18px;
-    text-align: center;
-    background-color: #b1aeae;
+    /*MENU 550PX*/
+    .menu{
+      display: none;
+    }
+    .buton{
+      
+      background-color: black;
+      color: white;
+      border:none;
+      cursor: pointer;
+      padding:10px;
+      margin-top:20px;
   }
-  @media screen and (max-width: 600px) {
-   
+  .buton:hover{
+      background-color: black;
+      
+      }
+  .icon {
+      position:relative;
+    /* margin-left: 250px;
+      margin-top: -25px;*/
+      display: inline-block;
+  }
+  .icon-drop {
+      display: none;
+      background-color:black;
+      min-width: 200px;
+  }
+  .icon-drop a {
+      color:#b7860f ;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+  }
+  .icon:hover .icon-drop {
+      display: block;
+  }
+  /*CONTEUDO PRIMEIRA PAGINA*/
+    .produtos{
+      display: flex;
+      flex-wrap: wrap;
+      width: 180px;
+      padding: 0 18px;
+    }
+    /*CONTEUDO PAGINA ONDE*/
+    iframe{
+      display: flex;
+      flex-wrap: wrap;
+      width: 180px;
+    }
+    /*TABELA*/
     .tabela {
      
-      width: 100%;
-      display: block  ;
+      /* width: 100%; */
+     /* display: block  ;*/
       margin-bottom: 20px;
     }
+    .form{
+
+    }
+  }   
+  /* MEDIA 320PX CELULAR*/
+ @media screen and (max-width: 320px) {
+  .menu{
+    display: none;
   }
+  .buton{
+    
+    background-color: black;
+    color: white;
+    border:none;
+    cursor: pointer;
+    padding:10px;
+    margin-top:20px;
+}
+
+.buton:hover{
+    background-color: black;
+    
+    }
+.icon {
+    position:relative;
+  /* margin-left: 250px;
+    margin-top: -25px;*/
+    display: inline-block;
+}
+.icon-drop {
+    display: none;
+    background-color:black;
+    min-width: 200px;
+}
+.icon-drop a {
+    color:#b7860f ;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.icon:hover .icon-drop {
+    display: block;
+}
+  .produtos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    padding: 0 18px;
+  }
+  iframe{
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+  }
+  #baixo{
+    font-size: 10pt;
+    width: 21%;
+  }
+  .acao{
+    width: 100%;
+    text-align: center;
+    margin-left: 0%;
+  }
+}
+   
  
-  
-  
-
-
-
-  
